@@ -1,0 +1,23 @@
+[
+  {
+    "ShortName": "Office1",
+    "Description": "Trumstr 19",
+    "City": "Berlin"
+  },
+  {
+    "ShortName": "Office2",
+    "Description": "Postdamer Platz 24",
+    "City": "Berlin"
+
+  },
+  {
+    "ShortName": "Office3",
+    "Description": "Hermanplatz 17",
+    "City": "Berlin"
+  },
+  {
+    "ShortName": "Office4",
+    "Description": "Zoologischer Garten 8",
+    "City": "Berlin"
+  }
+]

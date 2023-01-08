@@ -1,0 +1,22 @@
+<div class="bg-light px-4 py-3 text-uppercase font-weight-bold">
+    Order Summary
+</div>
+
+<div class="p-4">
+    <ul class="list-unstyled mb-4">
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Daily price:</strong>
+            <strong>{{subtotal | currency}}</strong>
+        </li>
+
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Number of rent days:</strong>
+            <strong>{{days}}</strong>
+        </li>
+
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Total:</strong>
+            <strong>{{total | currency}}</strong>
+        </li>
+    </ul>
+</div>

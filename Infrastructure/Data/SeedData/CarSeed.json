@@ -1,0 +1,130 @@
+[
+  {
+    "Name": "BMW 318i",
+    "PictureUrl": "images/Cars/BMW318i.png",
+    "Year": 2014,
+    "Fuel": "Benzin",
+    "Price": 100,
+    "CarTypeId": 1,
+    "CarBrandId": 1
+  },
+  {
+    "Name": "BMW 330",
+    "PictureUrl": "images/Cars/BMW330.png",
+    "Year": 2017,
+    "Fuel": "Diesel",
+    "Price": 200,
+    "CarTypeId": 1,
+    "CarBrandId": 1
+
+  },
+  {
+    "Name": "Audi A5",
+    "PictureUrl": "images/Cars/AudiA52015.png",
+    "Year": 2015,
+    "Fuel": "Diesel",
+    "Price": 100,
+    "CarTypeId": 1,
+    "CarBrandId": 2
+  },
+  {
+    "Name": "Mercedes-Benz CLS 350",
+    "PictureUrl": "images/Cars/Mercedes-Benz-CLS-350.png",
+    "Year": 2011,
+    "Fuel": "Diesel",
+    "Price": 80,
+    "CarTypeId": 1,
+    "CarBrandId": 3
+  },
+  {
+    "Name": "Volkswagen Golf 6",
+    "PictureUrl": "images/Cars/VolkswagenGolf6.png",
+    "Year": 2010,
+    "Fuel": "Benzin",
+    "Price": 50,
+    "CarTypeId": 2,
+    "CarBrandId": 4
+  },
+  {
+    "Name": "Smart",
+    "PictureUrl": "images/Cars/Smart2012.png",
+    "Year": 2012,
+    "Fuel": "Benzin",
+    "Price": 40,
+    "CarTypeId": 2,
+    "CarBrandId": 5
+  },
+  {
+    "Name": "Volvo",
+    "PictureUrl": "images/Cars/Volvo2012.png",
+    "Year": 2012,
+    "Fuel": "Diesel",
+    "Price": 45,
+    "CarTypeId": 2,
+    "CarBrandId": 5
+  },
+  {
+    "Name": "Audi A8",
+    "PictureUrl": "images/Cars/AudiA82016.png",
+    "Year": 2016,
+    "Fuel": "Diesel",
+    "Price": 250,
+    "CarTypeId": 1,
+    "CarBrandId": 2
+  },
+  {
+    "Name": "Mercedes-Benz C 200",
+    "PictureUrl": "images/Cars/Mercedes-BenzC200.png",
+    "Year": 2010,
+    "Fuel": "Diesel",
+    "Price": 55,
+
+    "CarTypeId": 2,
+    "CarBrandId": 3
+  },
+  {
+    "Name": "BMW 118",
+    "PictureUrl": "images/Cars/BMW118.png",
+    "Year": 2011,
+    "Fuel": "Benzin",
+    "Price": 55,
+    "CarTypeId": 2,
+    "CarBrandId": 1
+  },
+  {
+    "Name": "Porche Cayanne",
+    "PictureUrl": "images/Cars/PorscheCayenne2019.png",
+    "Year": 2019,
+    "Fuel": "Benzin",
+    "Price": 260,
+    "CarTypeId": 1,
+    "CarBrandId": 5
+  },
+  {
+    "Name": "Range Rover",
+    "PictureUrl": "images/Cars/RangeRover2020.png",
+    "Year": 2020,
+    "Fuel": "Benzin",
+    "Price": 300,
+    "CarTypeId": 1,
+    "CarBrandId": 5
+  },
+  {
+    "Name": "Mercedes-Benz S580",
+    "PictureUrl": "images/Cars/Mercedes_Benz_S580_4MATIC_Sedan_2022.png",
+    "Year": 2022,
+    "Fuel": "Benzin",
+    "Price": 350,
+    "CarTypeId": 1,
+    "CarBrandId": 3
+  },
+  {
+    "Name": "BMW 750i",
+    "PictureUrl": "images/Cars/BMW_750i_xDrive_2022.png",
+    "Year": 2022,
+    "Fuel": "Benzin",
+    "Price": 400,
+    "CarTypeId": 1,
+    "CarBrandId": 1
+  }
+]

@@ -1,0 +1,111 @@
+<form #carForm="ngForm" (ngSubmit)="onSubmit(carForm.valid && carForm.value)">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Car Name</label>
+      <input
+        [ngClass]="{'is-invalid': name.invalid && (name.dirty || name.touched)}"
+        required
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Car Name"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="car.name"
+      >
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+        <div *ngIf="name.errors.required">
+          Car Name is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="price">Price</label>
+      <input
+        [ngClass]="{'is-invalid': price.invalid && (price.dirty || price.touched)}"
+        required
+        type="text"
+        class="form-control"
+        id="price"
+        placeholder="Price"
+        currencyMask
+        name="price"
+        #price="ngModel"
+        pattern="^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\.[0-9][0-9])?$"
+        min="0.01"
+        [ngModel]="+car.price | number: '1.2-2'"
+        (ngModelChange)="updatePrice(+$event)"
+      >
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" class="invalid-feedback">
+        <div *ngIf="price.errors.required">
+          car price is required
+        </div>
+        <div *ngIf="price.errors.pattern">
+          car price needs to be decimal value
+        </div>
+        <div *ngIf="price.errors.min">
+          car price must be greater than zero
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="fuel">Fuel</label>
+      <input 
+      [ngClass]="{'is-invalid': fuel.invalid && (fuel.dirty || fuel.touched)}"
+      required
+      type="text"
+      class="form-control"
+      id="fuel"
+      placeholder="Fuel"
+      name="fuel"
+      #fuel="ngModel"
+      [(ngModel)]="car.fuel"
+      >
+      <div *ngIf="fuel.invalid && (fuel.dirty || fuel.touched)" class="invalid-feedback">
+        <div *ngIf="fuel.errors.required">
+          Fuel is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="Year">Year</label>
+      <input 
+      [ngClass]="{'is-invalid': year.invalid && (year.dirty || year.touched)}"
+      required
+      id="year"
+      class="form-control"
+      placeholder="Year"
+      type="text"
+      name="year"
+      #year="ngModel"
+      [(ngModel)]="car.year"
+      >
+      <div *ngIf="year.invalid && (year.dirty || year.touched)" class="invalid-feedback">
+        <div *ngIf="year.errors.required">
+          Year is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="brand">Brand</label>
+      <select id="brand" class="form-control" name="carBrandId" [(ngModel)]="car.carBrandId" required>
+        <option *ngFor="let brand of brands"
+                [selected]="car.carBrandId === brand.id"
+                [ngValue]="brand.id">{{brand.name}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="type">Type</label>
+      <select id="type" class="form-control" name="carTypeId" [(ngModel)]="car.carTypeId" required>
+        <option *ngFor="let type of types"
+                [selected]="car.carTypeId === type.id"
+                [ngValue]="type.id">{{type.name}}</option>
+      </select>
+    </div>
+  </div>
+  <button [disabled]="!carForm.valid" type="submit" class="btn btn-primary my-3 float-right">Submit</button>
+</form>

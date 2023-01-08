@@ -1,0 +1,32 @@
+<section class="type-edit mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <form #typeForm="ngForm" (ngSubmit)="onSubmit(typeForm.valid && typeForm.value)">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="name">Type Name</label>
+              <input
+                [ngClass]="{'is-invalid': name.invalid && (name.dirty || name.touched)}"
+                required
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Type Name"
+                name="name"
+                #name="ngModel"
+                [(ngModel)]="type.name"
+              >
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+                <div *ngIf="name.errors.required">
+                  Type Name is required
+                </div>
+              </div>
+              <button [disabled]="!typeForm.valid" type="submit" class="btn btn-primary my-3 float-right">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

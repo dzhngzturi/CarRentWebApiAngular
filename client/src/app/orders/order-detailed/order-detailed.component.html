@@ -1,0 +1,67 @@
+<div class="container mt-5">
+    <div class="row" *ngIf="orders">
+        <div class="col-8">
+            <div>
+                <div class="table-responsive">
+                    <table class="table table-borderless">
+                        <thead class="border-0 py-0">
+                            <tr>
+                                <th scope="col">
+                                    <div class="p-2 px-3 text-uppercase">Car</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="py-2 text-uppercase">Price</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="py-2 text-uppercase">Quantity</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of orders.orderItems" class="border-0">
+                                <th scope="row">
+                                    <div class="p-0">
+                                        <img src="{{item.pictureUrl}}" alt="{{item.productName}}"
+                                        class="img-fluid"
+                                        style="max-height:50px">
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0">
+                                                <a routerLink="/car/{{item.carId}}"  
+                                                    class="text-uppercase" id="txtCarName">{{item.carName}}
+                                                </a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </th>
+                                <td class="align-middle"><strong>{{item.price | currency}}</strong></td>
+                                <td class="align-middle">
+                                <span class="font-weight-bold px-5">{{item.quantity}}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">  
+            <div class="bg-light px-4 py-3 text-uppercase font-weight-bold">Order Summary</div>          
+            <div class="p-4">
+
+            <ul class="list-unstyled mb-1" *ngFor="let item of orders.orderItems">
+                <li class="d-flex justify-content-between py-3 border-bottom">
+                    <strong class="text-muted">Daily price:</strong>
+                    <strong class="text-muted">{{item.price | currency}}</strong>
+                </li>
+                <li class="d-flex justify-content-between py-3 border-bottom">
+                    <strong class="text-muted">Rented days:</strong>
+                    <strong class="text-muted">{{item.days}}</strong>
+                </li>
+                <li class="d-flex justify-content-between py-3 border-bottom">
+                    <strong class="text-muted">Order Total</strong>
+                    <strong class="text-muted">{{orders.total | currency}}</strong>
+                </li>
+             </ul>
+            </div>
+        </div>
+    </div>
+</div>

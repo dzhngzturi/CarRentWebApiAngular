@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="row" *ngIf="car" >
+        <div class="col-6">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages" style="display: inline-flexbox; margin-bottom: 20px;"></ngx-gallery>
+        </div>
+        <div class="col-6">
+            <h2 class="font-weight-bold" style="color: gray;">{{car.name}} - {{car.year}}</h2>
+            <p id="currency">{{car.price | currency}}</p>
+            <span class="font-weight-bold" style="font-size: 1.5em;"> 
+                Type
+            </span>
+           <h4 id="fuel">{{car.fuel}}</h4>
+            <div class="row">
+                <div class="col-12">
+                    <form [formGroup]="carRentForm">
+                        <div class="mb-3">
+                          <label for="rentDate" class="modalLabels">Rent Date</label>
+                          <input formControlName='rentDate' (input)='minDateChange($event)' class="form-control form-control-lg"
+                            name="rentDate" type="date" [min]="minDate" [max]="maxDate">
+                        </div>
+            
+                        <div>
+                          <label for="returnDate" class="modalLabels">Return Date</label>
+                          <input formControlName='returnDate' class="form-control form-control-lg" name="returnDate" type="date"
+                            [min]="minDate" (input)='maxDateChange($event)' [max]="maxDate">
+                            <div class="text-primary"> {{rentMessage}} </div>
+
+                            <div class="text-danger"> {{availableMessage}} </div>
+                        </div>
+                        <button class="btn btn-outline-secondary btn-lg mt-4"
+                        [disabled]="carRentForm.invalid"
+                        disabled = {{buttonDisabled}}
+                        (click)="addItemToBasket()" 
+                        [routerLink]="['/checkout']"
+                        routerLinkActive="router-link-active">Add to Cart</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
